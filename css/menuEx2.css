@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#cart {
+    position: relative;
+    margin-right: -100px;
+}
+
+.cart-box {
+    width: 400px;
+    height: 400px;
+    border: 2px solid #000;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50px;
+    right: 0;
+    display: none;
+    overflow-y: auto;
+}
+
+.cart-box h2 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.cart-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-box li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+#total-price {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.cart {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cart:hover {
+    background-color: #ff4500;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    width: 100%;
+    padding: 10px 0 20px 0;
+}
+
+.menu .menu_box {
+    width: 95%;
+    margin: 45px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default: 3 cards per row */
+    grid-gap: 30px 10px;
+}
+
+/* For screens larger than 1440px (4 cards per row) */
+@media (min-width: 1440px) {
+    .menu .menu_box {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.menu .menu_box .menu_card {
+    background-image: url(../image/menu_card_bg.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 400px;
+    height: 600px;
+    cursor: pointer;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Ensuring images are uniform */
+.menu .menu_box .menu_card .menu_img {
+    width: 100%;
+    height: 370px; /* Fixed height for uniform images */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+.menu .menu_box .menu_card .menu_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu .menu_box .menu_card .menu_img:hover img {
+    transform: scale(1.1);
+}
+
+.menu .menu_box .menu_card .menu_text {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu .menu_box .menu_card .menu_text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.menu .menu_box .menu_card .menu_text p {
+    font-size: 14px;
+    line-height: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.menu .menu_box .menu_card .menu_text .price {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 8px 0;
+}
+
+.quantity-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.quantity-decrement, 
+.quantity-increment {
+    background: #ffcc00;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.quantity-decrement:hover,
+.quantity-increment:hover {
+    background: #ff9900;
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 5px;
+    padding: 5px;
+}
+
+.menu .menu_box .menu_card .menu_text .menu_btn,
+.order_btn {
+    color: #000;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #facc22;
+    background-color: #facc22;
+    border-radius: 20px;
+    position: relative;
+    top: 20px;
+    transition: 0.3s;
+    z-index: 5;
+}
+
+.menu .menu_box .menu_card .menu_text .menu_btn:hover,
+.order_btn:hover {
+    background-color: #ffde21;
+}
+
+.menu-nav {
+    position: fixed;
+    padding: 15px 0;
+    text-align: center;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.menu-nav button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #f4a261;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.menu-nav button:hover {
+    background-color: #e76f51;
+}
+
+.menu-section {
+    padding: 100px 20px;
+    border-bottom: 2px solid #ddd;
+    min-height: 100vh;
+}
+
+h2 {
+    color: #264653;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #facc22;
+    border-radius: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 2040px) {
+    .menu .menu_box {
+        grid-template-columns: repeat(3, 1fr); /* 2 cards per row */
+    }
+
+    .menu .menu_box .menu_card {
+        max-width: 100%; /* Full width in smaller screens */
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .menu .menu_box {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+
+    .menu .menu_box .menu_card {
+        max-width: 100%; /* Full width in smaller screens */
+    }
+}
+
+@media (max-width: 425px) {
+    .menu .menu_box {
+        grid-template-columns: 1fr; /* 1 card per row */
+    }
+
+    .menu .menu_box .menu_card {
+        height: auto; /* Allow cards to resize for mobile */
+    }
+}
